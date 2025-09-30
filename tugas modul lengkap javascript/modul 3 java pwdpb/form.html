@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Data Mahasiswa</title>
+</head>
+<body bgcolor="#87CEEB">
+    <h2 align="center">Data Mahasiswa</h2>
+    <h3 align="center">Universitas Komputer Indonesia</h3>
+    <form method="post" action="proses.php">
+        <table align="center" cellpadding="5" cellspacing="0">
+            <tr>
+                <td>NIM</td>
+                <td><input type="text" name="nim" required></td>
+            </tr>
+            <tr>
+                <td>Nama Mahasiswa</td>
+                <td><input type="text" name="nama" required></td>
+            </tr>
+            <tr>
+                <td>Jenis Kelamin</td>
+                <td>
+                    <input type="radio" name="jk" value="Laki-laki">Laki-laki
+                    <input type="radio" name="jk" value="Perempuan">Perempuan
+                </td>
+            </tr>
+            <tr>
+                <td>Agama</td>
+                <td>
+                    <select name="agama">
+                        <option>Islam</option>
+                        <option>Kristen</option>
+                        <option>Katolik</option>
+                        <option>Hindu</option>
+                        <option>Buddha</option>
+                        <option>Konghucu</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>Status</td>
+                <td>
+                    <input type="radio" name="status" value="Menikah">Menikah
+                    <input type="radio" name="status" value="Tidak Kawin">Tidak Kawin
+                </td>
+            </tr>
+            <tr>
+                <td>Jurusan</td>
+                <td>
+                    <select name="jurusan">
+                        <option>Teknik Informatika</option>
+                        <option>Sistem Informasi</option>
+                        <option>Teknik Komputer</option>
+                        <option>Manajemen Informatika</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>Komentar</td>
+                <td><textarea name="komentar" rows="4" cols="40"></textarea></td>
+            </tr>
+            <tr>
+                <td colspan="2" align="center">
+                    <input type="submit" value="Kirim">
+                    <input type="reset" value="Ulang">
+                </td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>

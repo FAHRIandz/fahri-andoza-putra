@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Operasi Aritmatika</title>
+  <script type="text/javascript">
+    function hitung(operasi) {
+      let bil1 = parseFloat(document.getElementById("bil1").value);
+      let bil2 = parseFloat(document.getElementById("bil2").value);
+      let hasil = 0;
+
+      if (isNaN(bil1) || isNaN(bil2)) {
+        alert("Harap isi kedua bilangan dengan angka!");
+        return;
+      }
+
+      switch (operasi) {
+        case "tambah":
+          hasil = bil1 + bil2;
+          break;
+        case "kurang":
+          hasil = bil1 - bil2;
+          break;
+        case "kali":
+          hasil = bil1 * bil2;
+          break;
+        case "bagi":
+          if (bil2 === 0) {
+            alert("Pembagian dengan 0 tidak bisa!");
+            return;
+          }
+          hasil = bil1 / bil2;
+          break;
+      }
+      alert("Hasil " + operasi + " = " + hasil);
+    }
+
+    function ulang() {
+      document.getElementById("bil1").value = "";
+      document.getElementById("bil2").value = "";
+    }
+  </script>
+</head>
+<body>
+  <h2>Memasukkan Data Lewat Keyboard</h2>
+  Bilangan Pertama: <input type="text" id="bil1"><br><br>
+  Bilangan Kedua: <input type="text" id="bil2"><br><br>
+
+  <button onclick="hitung('tambah')">Jumlahkan</button>
+  <button onclick="hitung('kurang')">Kurangkan</button>
+  <button onclick="hitung('kali')">Kalikan</button>
+  <button onclick="hitung('bagi')">Bagikan</button>
+  <button onclick="ulang()">Ulang</button>
+</body>
+</html>

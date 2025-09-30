@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Travel Bintang Abadi</title>
+    <script>
+        function hitungTotal() {
+            let tujuan = document.getElementById("tujuan").value;
+            let kelas = document.getElementById("kelas").value;
+            let jumlah = parseInt(document.getElementById("jumlah").value);
+            let member = document.getElementById("member").checked;
+
+            let harga = 0;
+
+            // Cek harga berdasarkan tujuan & kelas
+            switch (tujuan) {
+                case "Jakarta":
+                    if (kelas === "Eksekutif") harga = 70000;
+                    else if (kelas === "Bisnis") harga = 40000;
+                    else if (kelas === "Ekonomi") harga = 20000;
+                    break;
+                case "Solo":
+                    if (kelas === "Eksekutif") harga = 80000;
+                    else if (kelas === "Bisnis") harga = 50000;
+                    else if (kelas === "Ekonomi") harga = 30000;
+                    break;
+                case "Surabaya":
+                    if (kelas === "Eksekutif") harga = 90000;
+                    else if (kelas === "Bisnis") harga = 60000;
+                    else if (kelas === "Ekonomi") harga = 40000;
+                    break;
+            }
+
+            let subtotal = harga * jumlah;
+            let diskon = member ? subtotal * 0.1 : 0;
+            let total = subtotal - diskon;
+
+            // Tampilkan hasil
+            document.getElementById("harga").value = harga;
+            document.getElementById("subtotal").value = subtotal;
+            document.getElementById("diskon").value = diskon;
+            document.getElementById("total").value = total;
+        }
+    </script>
+</head>
+<body>
+    <h2>Travel Bintang Abadi</h2>
+    <form>
+        Nama: <input type="text" id="nama"><br><br>
+
+        Tujuan:
+        <select id="tujuan">
+            <option value="Jakarta">Jakarta</option>
+            <option value="Solo">Solo</option>
+            <option value="Surabaya">Surabaya</option>
+        </select><br><br>
+
+        Kelas:
+        <select id="kelas">
+            <option value="Eksekutif">Eksekutif</option>
+            <option value="Bisnis">Bisnis</option>
+            <option value="Ekonomi">Ekonomi</option>
+        </select><br><br>
+
+        Jumlah Tiket: <input type="number" id="jumlah" min="1" value="1"><br><br>
+
+        <input type="checkbox" id="member"> Member<br><br>
+
+        <button type="button" onclick="hitungTotal()">Hitung</button>
+        <button type="reset">Ulang</button><br><br>
+
+        Harga Tiket: <input type="text" id="harga" readonly><br><br>
+        Subtotal: <input type="text" id="subtotal" readonly><br><br>
+        Diskon: <input type="text" id="diskon" readonly><br><br>
+        Total Bayar: <input type="text" id="total" readonly><br><br>
+    </form>
+</body>
+</html>

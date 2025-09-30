@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Latihan JavaScript</title>
+  <script>
+    // === Bagian 1: Ucapan Berdasarkan Waktu ===
+    window.onload = function() {
+      let sekarang = new Date();
+      let jam = sekarang.getHours();
+      let pesan = "";
+
+      if (jam >= 0 && jam < 12) {
+        pesan = "Selamat Pagi";
+      } else if (jam >= 12 && jam < 18) {
+        pesan = "Selamat Siang";
+      } else {
+        pesan = "Selamat Malam";
+      }
+
+      // Tampilkan pesan
+      alert(pesan);
+      document.getElementById("ucapan").innerHTML = "<marquee>" + pesan + "</marquee>";
+    }
+
+    // === Bagian 2: Hitung Akar Persamaan Kuadrat ===
+    function hitungAkar() {
+      let a = parseFloat(document.getElementById("a").value);
+      let b = parseFloat(document.getElementById("b").value);
+      let c = parseFloat(document.getElementById("c").value);
+
+      let diskriminan = (b * b) - (4 * a * c);
+      let x1, x2, hasil = "";
+
+      if (diskriminan > 0) {
+        x1 = (-b + Math.sqrt(diskriminan)) / (2 * a);
+        x2 = (-b - Math.sqrt(diskriminan)) / (2 * a);
+        hasil = "Akar 1 = " + x1 + "<br>Akar 2 = " + x2;
+      } else if (diskriminan === 0) {
+        x1 = -b / (2 * a);
+        hasil = "Akar kembar = " + x1;
+      } else {
+        hasil = "Tidak punya akar real (diskriminan < 0)";
+      }
+
+      document.getElementById("output").innerHTML = hasil;
+    }
+  </script>
+</head>
+<body>
+  <!-- Bagian Ucapan -->
+  <h2>Ucapan Otomatis</h2>
+  <div id="ucapan" style="font-size:18px; font-weight:bold; color:blue;"></div>
+  <hr>
+
+  <!-- Bagian Akar Kuadrat -->
+  <h2>Mencari Akar Persamaan Kuadrat</h2>
+  <p>Persamaan: ax² + bx + c = 0</p>
+  a: <input type="number" id="a"><br>
+  b: <input type="number" id="b"><br>
+  c: <input type="number" id="c"><br><br>
+  <button type="button" onclick="hitungAkar()">Hitung Akar</button>
+  <div id="output" style="margin-top:10px; font-weight:bold;"></div>
+</body>
+</html>

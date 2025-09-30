@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Latihan Select</title>
+  <script>
+    function tampilkanJurusan() {
+      let jurusan = document.getElementById("jurusan").value;
+      document.getElementById("output").value = jurusan;
+    }
+  </script>
+</head>
+<body>
+  <h2>Penggunaan Objek Select</h2>
+  <form>
+    Masukan : <br>
+    Jurusan Di UNIKOM :
+    <select id="jurusan" onchange="tampilkanJurusan()">
+      <option value="Teknik Informatika">Teknik Informatika</option>
+      <option value="Sistem Informasi">Sistem Informasi</option>
+      <option value="Teknik Komputer">Teknik Komputer</option>
+      <option value="Ilmu Komunikasi">Ilmu Komunikasi</option>
+    </select>
+    <br><br>
+    Output jurusan : <br>
+    <input type="text" id="output" readonly>
+  </form>
+</body>
+</html>
